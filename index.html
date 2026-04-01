@@ -1,46 +1,333 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Move Studio | Pilates</title>
 
-<link rel="stylesheet" href="style.css">
-
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Move Studio | Kinetic Equilibrium</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error": "#ba1a1a",
+              "secondary-container": "#dde0e2",
+              "background": "#f8fafa",
+              "surface-container-highest": "#e1e3e3",
+              "inverse-primary": "#50dad1",
+              "on-secondary-container": "#5f6365",
+              "on-surface-variant": "#3c4948",
+              "surface-variant": "#e1e3e3",
+              "outline-variant": "#bbc9c7",
+              "error-container": "#ffdad6",
+              "on-secondary-fixed": "#181c1e",
+              "on-background": "#191c1d",
+              "primary": "#006a64",
+              "secondary-fixed": "#e0e3e5",
+              "surface-container-high": "#e6e8e8",
+              "surface-tint": "#006a64",
+              "surface-dim": "#d8dada",
+              "on-primary-fixed-variant": "#00504b",
+              "surface-container-low": "#f2f4f4",
+              "on-tertiary": "#ffffff",
+              "primary-fixed-dim": "#50dad1",
+              "on-surface": "#191c1d",
+              "inverse-on-surface": "#eff1f1",
+              "surface-bright": "#f8fafa",
+              "surface": "#f8fafa",
+              "on-error-container": "#93000a",
+              "on-secondary": "#ffffff",
+              "on-tertiary-fixed": "#360f00",
+              "on-primary-fixed": "#00201e",
+              "on-primary": "#ffffff",
+              "outline": "#6c7a78",
+              "surface-container": "#eceeee",
+              "on-tertiary-fixed-variant": "#7b2f08",
+              "tertiary": "#99461f",
+              "on-tertiary-container": "#632100",
+              "on-secondary-fixed-variant": "#434749",
+              "primary-container": "#00b2a9",
+              "on-primary-container": "#003e3a",
+              "tertiary-fixed-dim": "#ffb598",
+              "secondary": "#5b5f61",
+              "tertiary-container": "#ea8458",
+              "tertiary-fixed": "#ffdbcd",
+              "inverse-surface": "#2e3131",
+              "surface-container-lowest": "#ffffff",
+              "on-error": "#ffffff",
+              "primary-fixed": "#72f7ed",
+              "secondary-fixed-dim": "#c4c7c9"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-nav {
+        background-color: rgba(248, 250, 250, 0.8);
+        backdrop-filter: blur(20px);
+      }
+      .gradient-primary {
+        background: linear-gradient(135deg, #006a64 0%, #00b2a9 100%);
+      }
+    </style>
 </head>
-
-<body>
-
-<header>
-<h1>Move Studio</h1>
-<p>by SI Pilates</p>
-</header>
-
-<section class="hero">
-<h2>Muévete mejor, respira mejor</h2>
-<p>Clases de pilates diseñadas para mejorar tu bienestar físico y mental.</p>
-<button onclick="contacto()">Reservar clase</button>
+<body class="bg-background text-on-background font-body selection:bg-primary-container/30">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 glass-nav shadow-[0_12px_40px_rgba(25,28,29,0.06)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<span class="font-['Noto_Serif'] text-2xl font-bold text-teal-700 dark:text-teal-300">Move Studio</span>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-teal-700 dark:text-teal-300 border-b-2 border-teal-600 pb-1 font-['Noto_Serif'] text-lg font-medium tracking-wide" href="#">Home</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-teal-500 transition-colors duration-300 font-['Noto_Serif'] text-lg font-medium tracking-wide" href="#">Classes</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-teal-500 transition-colors duration-300 font-['Noto_Serif'] text-lg font-medium tracking-wide" href="#">About</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-teal-500 transition-colors duration-300 font-['Noto_Serif'] text-lg font-medium tracking-wide" href="#">Contact</a>
+</div>
+<button class="gradient-primary text-white px-8 py-3 rounded-full font-semibold shadow-lg active:scale-95 transition-transform">
+                Book Now
+            </button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-20 px-8 overflow-hidden bg-surface">
+<div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="z-10 space-y-8">
+<h1 class="font-headline text-6xl md:text-8xl text-on-background leading-tight tracking-tight">
+                        Tu cuerpo en <br/>
+<span class="text-primary italic">equilibrio</span>
+</h1>
+<p class="text-xl text-secondary max-w-md font-body leading-relaxed">
+                        Inicia tu cambio con un enfoque consciente. Redescubre el movimiento a través de la precisión y la fluidez del Pilates.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="gradient-primary text-white px-10 py-5 rounded-full text-lg font-bold shadow-xl hover:translate-y-[-2px] transition-all">
+                            Reservar Clase
+                        </button>
+<button class="border border-outline-variant/30 px-10 py-5 rounded-full text-lg font-semibold text-on-surface hover:bg-surface-container-low transition-colors">
+                            Ver Horarios
+                        </button>
+</div>
+</div>
+<div class="relative h-[600px] w-full rounded-xl overflow-hidden shadow-2xl">
+<img alt="Pilates Reformer Workout" class="w-full h-full object-cover" data-alt="Close-up of a professional pilates reformer machine in a bright sunlit studio with soft shadows and elegant equipment details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUy4_84PM6fR5la2eV39UqOevDqEIBboAJqArnmsxo095ieLaEAL9R43hCHcNZQmm0aaoQA_YlLQjBbZn_Ph6DbmtRUJ3pwe6uYBJfSyr8LyqeVizeW6eofbrhq883L-GGjwb8o1ARH4nL14bAczQia71zTjCDfKF_IaLzPIruOfXdEpqayTCX2MSQbDB2q891EUVLkbzGqh21VSF8Q2j-Q-_6Jg0ZDri_a0q0ieHU81OHXndYf-8DAw8mX7Gv3KUX32muAUASYf4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
+</div>
+</div>
+<!-- Decorative Element -->
+<div class="absolute -bottom-24 -left-24 w-96 h-96 bg-primary-container/10 rounded-full blur-3xl"></div>
 </section>
-
-<section class="beneficios">
-
-<h2>Beneficios del Pilates</h2>
-
-<ul>
-<li>Mejora postura</li>
-<li>Fortalece el core</li>
-<li>Reduce estrés</li>
-<li>Aumenta flexibilidad</li>
-
+<!-- Our Classes Section (Bento Grid) -->
+<section class="py-24 px-8 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-xl">
+<h2 class="font-headline text-5xl text-on-background mb-4">Nuestras Clases</h2>
+<p class="text-secondary text-lg">Experiencias diseñadas para cada nivel, desde la base hasta la maestría del movimiento.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[700px]">
+<!-- Reformer Pilates -->
+<div class="md:col-span-8 group relative overflow-hidden rounded-xl bg-surface-container-lowest transition-transform duration-500 hover:scale-[1.01]">
+<img class="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700" data-alt="Modern pilates studio interior with a row of wooden reformer machines and large windows letting in natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu4dCpSc_X1F5Ki_PFEbWHv-hqREED03WzlAd151y6ig8mM1y1jBQxfOtraZSsIT0GIfIN7B9Sehsyw3RbGJSf2wF-a9twmGsjnO6Sir6bQ8YpoFmLNDSe3zpVRnjMdB5Xb_WGKCFOb7Su3FZCoYyYP7ypcwOE2QcJs2WB71YmVccmlXNj8pM9BX3gXerSNl_Ymz1ctpFbonqba4hIX5W05zabp7X0PXqZpnNGwuVujY0J_bu8CI-Ri7icYb5pEq3eJAqhKYL45xM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-12 flex flex-col justify-end text-white">
+<span class="text-primary-fixed uppercase tracking-widest text-xs font-bold mb-3">Popular</span>
+<h3 class="font-headline text-4xl mb-2">Reformer Pilates</h3>
+<p class="max-w-md text-surface-container-highest/80 mb-6">Utiliza la resistencia de resortes para esculpir, fortalecer y alinear tu cuerpo con precisión clínica.</p>
+<div class="flex items-center gap-2 text-primary-fixed font-bold">
+<span>Ver detalles</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Mat Pilates -->
+<div class="md:col-span-4 group relative overflow-hidden rounded-xl bg-surface-container-lowest">
+<img class="absolute inset-0 w-full h-full object-cover opacity-80" data-alt="Woman practicing pilates on a yoga mat in a minimalist room with warm ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGPvUdvhkppA55KrR2rxjjzRJG4elILPnq1cEpHfwINjMNiSrcFY1GYg4XvrEGb6hIh6dq6gtRfn-jU7BlgkD95Cx2w5hqRU5eLDBVP9amAnCyIf7OddusiZfRFjUKiWc2TuLfYL88JOQo5rebYTJgdsfaqVnpc3aL7PCuUOf9QLt3XkXix3j0nKnb1A7k5ZAejR-nV--ITRhPgo42l_ZwKMXXScFBH06UeM2dMdk0oOPJOZl_pj0hRLbW5BEvw8oXQJlkSDmjBi4"/>
+<div class="absolute inset-0 bg-primary/40 flex flex-col justify-end p-8 text-white">
+<h3 class="font-headline text-2xl mb-2">Mat Pilates</h3>
+<p class="text-sm opacity-90 mb-4">La esencia del control muscular y la respiración consciente sin equipamiento.</p>
+</div>
+</div>
+<!-- Personal Training -->
+<div class="md:col-span-4 group relative overflow-hidden rounded-xl bg-surface-container-lowest">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="One on one personalized training session with an instructor guiding a student on a pilates equipment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7M5ie7Oi4itC7iTGfhiSiTF32_s1127IYC-LRB5tZjEy2_jVqsyst80meV1ECIUAcDYjfXNyDKP37jBtvi7U1MdlXzh6UcRBZmpynprWgrwyluuWStcw7Elh5aXhOpL9NkOqd1DBxASU19DZAGrtmKBAgzruAOMHPgBEedWr-wSBBafrsFVAex1oNdEDelVIL2fu-rW7X1MXqC9D0DYdilUXkA4ues6CzFUNBam1IosTTXOXIQ35iR7YDvMye4HW9WpTo0o5GA4Y"/>
+<div class="absolute inset-0 bg-on-background/60 backdrop-blur-sm p-8 flex flex-col justify-center text-white text-center">
+<h3 class="font-headline text-2xl mb-2">Personal Training</h3>
+<p class="text-sm opacity-80">Enfoque 1:1 adaptado a tus objetivos y necesidades específicas.</p>
+</div>
+</div>
+<!-- Group Promo -->
+<div class="md:col-span-8 bg-primary-container/10 p-12 rounded-xl flex items-center justify-between">
+<div class="max-w-md">
+<h3 class="font-headline text-3xl text-primary mb-4">¿Primera vez?</h3>
+<p class="text-on-surface-variant mb-6">Disfruta de una clase de diagnóstico personalizada para evaluar tu postura y nivel actual.</p>
+<button class="bg-primary text-white px-8 py-3 rounded-full font-bold">Solicitar Diagnóstico</button>
+</div>
+<div class="hidden md:block">
+<span class="material-symbols-outlined text-8xl text-primary/20" style="font-variation-settings: 'FILL' 1;">self_improvement</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Benefits Section (Asymmetric Editorial Layout) -->
+<section class="py-32 px-8 bg-surface overflow-hidden">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div class="relative">
+<div class="grid grid-cols-2 gap-6">
+<div class="space-y-6 pt-12">
+<div class="bg-surface-container-low p-8 rounded-xl aspect-square flex flex-col justify-center shadow-sm">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-4">accessibility_new</span>
+<h4 class="font-headline text-2xl mb-2">Postura</h4>
+<p class="text-sm text-secondary">Realinea tu columna y reduce tensiones diarias.</p>
+</div>
+<div class="bg-primary-container text-white p-8 rounded-xl aspect-square flex flex-col justify-center shadow-lg">
+<span class="material-symbols-outlined text-white text-4xl mb-4">fitness_center</span>
+<h4 class="font-headline text-2xl mb-2 text-on-primary">Fuerza Core</h4>
+<p class="text-sm opacity-90">Fortalecimiento profundo de la faja abdominal.</p>
+</div>
+</div>
+<div class="space-y-6">
+<div class="bg-secondary-container p-8 rounded-xl aspect-square flex flex-col justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">architecture</span>
+<h4 class="font-headline text-2xl mb-2">Flexibilidad</h4>
+<p class="text-sm text-secondary">Aumenta tu rango de movimiento con seguridad.</p>
+</div>
+<div class="bg-surface-container-high p-8 rounded-xl aspect-square flex flex-col justify-center shadow-sm">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-4">psychology_alt</span>
+<h4 class="font-headline text-2xl mb-2">Mindset</h4>
+<p class="text-sm text-secondary">Conecta mente y cuerpo en cada repetición.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-8 lg:pl-12">
+<h2 class="font-headline text-5xl leading-tight">Más que ejercicio, es <span class="text-primary italic">evolución</span> funcional.</h2>
+<p class="text-lg text-secondary leading-relaxed">
+                        En Move Studio, no solo entrenamos músculos; refinamos la forma en que te mueves en el mundo. Nuestra metodología combina la ciencia del movimiento con la elegancia del Pilates clásico.
+                    </p>
+<ul class="space-y-6">
+<li class="flex gap-4 items-start">
+<div class="bg-primary/10 p-2 rounded-full"><span class="material-symbols-outlined text-primary text-xl">check</span></div>
+<div>
+<span class="block font-bold text-on-background">Instructores Certificados</span>
+<span class="text-sm text-secondary">Profesionales con formación internacional.</span>
+</div>
+</li>
+<li class="flex gap-4 items-start">
+<div class="bg-primary/10 p-2 rounded-full"><span class="material-symbols-outlined text-primary text-xl">check</span></div>
+<div>
+<span class="block font-bold text-on-background">Grupos Reducidos</span>
+<span class="text-sm text-secondary">Máximo 5 personas para asegurar atención personalizada.</span>
+</div>
+</li>
 </ul>
-
+</div>
+</div>
 </section>
-
-<footer>
-<p>© 2026 Move Studio</p>
+<!-- The Studio Section -->
+<section class="py-24 px-8 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline text-5xl mb-4">El Santuario</h2>
+<p class="text-secondary max-w-2xl mx-auto">Un espacio diseñado para la concentración, con luz natural y equipamiento premium de última generación.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="rounded-xl overflow-hidden shadow-sm h-80">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="Modern and clean pilates studio interior with high ceilings and bamboo flooring" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDS8xiOZfe-uiqAn-hhB29vlWNw3qS4J-6-VMKIxxzgE0jDFGGnY3slqcb5UawyncMKbEF8brxna7KxxDScToFOtDXunFVy5ivZ7YVi5cgWu8x4pCqyCWrh2Irpym2pfSzGrBXpOQD-qyNEUI0zfiAASKaHzUxB0bwccuRdw1eEO8FadkqGIKbX8Re_fDxfdnnbou0jTZ9D6RbPbJyVx01LqwxxRK4CcO-bwz_a52ZDXJhUbUsHSK63Ec9_c8xWp8m5GgKASCHlw3g"/>
+</div>
+<div class="rounded-xl overflow-hidden shadow-sm h-80 transform md:translate-y-12">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="Detail shot of studio accessories including clean towels, weights, and essential oils on a shelf" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBU-SR1ZUu-YT6k9yOC2k8HpsVFBkoTLtX6d6LMF7ZD_aquq6Eq5lB5iZood3Yw_VSbCzFV0FlazaCa-LDeRT19uZ1GfNgYOYEnQD2HYY6mGWJ2qp13Fr-gC85xh4BKWlXw6yvEl5ePZcTnGZTio70MdJ4yFCPs2krHSBN3Gky6rXeZnzaT0BaQucM0qN7-ao8EsDO6tfThV60DFDmBwUMMLb4nok9e-GyRzqCbvj0gz_3f_jFfVgsaKTl9Spq9MI_EOikVf8kuMt8"/>
+</div>
+<div class="rounded-xl overflow-hidden shadow-sm h-80">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="Sunlight streaming through large windows onto a series of pilates reformer machines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtyu-8GrX4JKuVddDKz2EO5fQFKMTWjAWETUnqKVVP3RpO7JdrrnHgVs0ymY359NhgRZHokg5D5KQx2dLqz6czWFy5TGIh60vFujUjXTfkI8ctpeb8-WR9tIGPUCct1M_DFot2fxaatMhAzdCyB5aEo_hDMeOcYo0FL659uVnp1BsBvSqJgLSupy9p4Q5lR1FPlLZpgOtpdQGQCVjyLQAESmIt0udVA0ZGbn3zBXFJGH1IyTMpFsy-bYBZo-pcnkhKYoNnYwVL9zA"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact & Location Section -->
+<section class="py-32 px-8 bg-surface">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+<div>
+<h2 class="font-headline text-5xl mb-8">Conecta con nosotros</h2>
+<form class="space-y-6">
+<div class="grid grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary pl-2">Nombre</label>
+<input class="w-full bg-surface-container border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Tu nombre" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary pl-2">Email</label>
+<input class="w-full bg-surface-container border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 transition-all" placeholder="hola@ejemplo.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary pl-2">Mensaje</label>
+<textarea class="w-full bg-surface-container border-none rounded-xl p-4 focus:ring-2 focus:ring-primary/20 transition-all" placeholder="¿En qué podemos ayudarte?" rows="4"></textarea>
+</div>
+<button class="w-full gradient-primary text-white py-5 rounded-full font-bold shadow-lg">Enviar Mensaje</button>
+</form>
+<div class="mt-12 flex gap-12">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">phone_iphone</span>
+<span class="font-medium">+34 600 000 000</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">mail</span>
+<span class="font-medium">hola@movestudio.com</span>
+</div>
+</div>
+</div>
+<div class="relative rounded-2xl overflow-hidden shadow-2xl h-[500px] lg:h-full group">
+<img class="w-full h-full object-cover" data-alt="Stylized map view of a modern urban neighborhood with the studio location highlighted by a soft teal glow" data-location="Barcelona, Spain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgcr1gRdArKamXTSiLa2rScINkoenKW_rYOBWJOFGU4VMioDF3PlmhctOhPi8pvGl1NuIhajnIY39bpxNDcYoHRme0uLWdGbEChIP-bUcsqnAKOmWi40wwZNecG3L3NQq2hl7OdFkCylp5qAlqQ4b205x64vYBEwDU9smji83cIatnF75ZE1Bao3xqQWsRFC1kUHUtimpt2p11SCLC66N3KDJkTxXoNfDbSRLS4MOJrzhcH2AudIUm7a-Ah8TZeEz8XPchPGuLv38"/>
+<div class="absolute inset-0 bg-primary/10 pointer-events-none group-hover:bg-transparent transition-all duration-700"></div>
+<div class="absolute bottom-8 left-8 right-8 bg-surface-container-lowest/90 backdrop-blur-md p-6 rounded-xl border border-white/20">
+<p class="font-bold text-on-surface mb-1">Calle del Equilibrio, 42</p>
+<p class="text-sm text-secondary">08001 Barcelona, España</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 bg-slate-50 dark:bg-slate-950">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+<div class="col-span-1 md:col-span-1">
+<span class="font-['Noto_Serif'] text-xl font-bold text-teal-700 dark:text-teal-300">Move Studio</span>
+<p class="mt-4 font-['Manrope'] text-sm text-slate-500 leading-relaxed">Kinetic Equilibrium. Encontrando la armonía a través del movimiento consciente.</p>
+</div>
+<div>
+<h4 class="font-headline text-lg mb-4 text-teal-700">Studio</h4>
+<ul class="space-y-2">
+<li><a class="text-slate-500 hover:text-teal-600 font-['Manrope'] text-sm transition-transform duration-200 hover:translate-y-[-2px] block" href="#">Instagram</a></li>
+<li><a class="text-slate-500 hover:text-teal-600 font-['Manrope'] text-sm transition-transform duration-200 hover:translate-y-[-2px] block" href="#">Facebook</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline text-lg mb-4 text-teal-700">Legal</h4>
+<ul class="space-y-2">
+<li><a class="text-slate-500 hover:text-teal-600 font-['Manrope'] text-sm transition-transform duration-200 hover:translate-y-[-2px] block" href="#">Privacy Policy</a></li>
+<li><a class="text-slate-500 hover:text-teal-600 font-['Manrope'] text-sm transition-transform duration-200 hover:translate-y-[-2px] block" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div class="flex flex-col items-end">
+<p class="font-['Manrope'] text-sm text-slate-500">© 2024 Move Studio. Kinetic Equilibrium.</p>
+</div>
+</div>
 </footer>
-
-<script src="script.js"></script>
-
-</body>
-</html>
+</body></html>
